@@ -1,0 +1,27 @@
+/*
+ *   前端tsconfig配置
+ */
+{
+    "extends": "./tsconfig.json", // 继承基础 tsconfig 配置
+    "compilerOptions": {
+        "target": "ES2020", // 编译输出目标为 ES2020
+        "useDefineForClassFields": true, // 使用 Object.defineProperty 定义类字段，符合 TC39 提案
+        "lib": ["ES2020", "DOM", "DOM.Iterable"], // 类型库：ES2020 + 浏览器 DOM API + 可迭代 DOM 集合
+        "module": "ESNext", // 输出模块格式为最新 ES 模块标准
+        "skipLibCheck": true, // 跳过 .d.ts 类型声明文件的类型检查，加快编译
+
+        /* Bundler mode */
+        "moduleResolution": "bundler", // 使用打包器解析策略，支持无扩展名导入等打包器特性
+        "allowImportingTsExtensions": true, // 允许导入 .ts/.tsx 扩展名的文件
+        "isolatedModules": true, // 确保每个文件可独立转译
+        "moduleDetection": "force", // 强制将所有文件视为模块(含 import/export)
+        "noEmit": true, // 不输出编译文件，由 Vite 等打包器处理
+        "jsx": "react-jsx", // 使用 React 17+ 的新 JSX 转换，无需手动 import React
+
+        /* Linting */
+        "strict": true, // 启用所有严格类型检查
+        "noUnusedLocals": true, // 报错未使用的局部变量
+        "noUnusedParameters": true, // 报错未使用的函数参数
+        "noFallthroughCasesInSwitch": true // 禁止 switch 的 case 穿透
+    }
+}

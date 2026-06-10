@@ -1,0 +1,22 @@
+/*
+ *   服务端tsconfig配置
+ */
+{
+    "compilerOptions": {
+        "module": "commonjs", // 输出 CommonJS 模块格式，兼容 Node.js
+        "declaration": true, // 生成 .d.ts 类型声明文件
+        "removeComments": true, // 移除编译输出中的注释
+        "emitDecoratorMetadata": true, // 为装饰器生成元数据，配合 reflect-metadata 使用
+        "experimentalDecorators": true, // 启用实验性装饰器语法
+        "allowSyntheticDefaultImports": true, // 允许从没有默认导出的模块中默认导入
+        "target": "ES2021", // 编译输出目标为 ES2021
+        "sourceMap": true, // 生成 sourceMap 文件
+        "incremental": true, // 启用增量编译，仅重新编译变更文件以加快速度
+        "skipLibCheck": true, // 跳过 .d.ts 类型声明文件的检查
+        "strictNullChecks": false, // 不进行严格的 null/undefined 检查
+        "noImplicitAny": false, // 允许隐式 any 类型
+        "strictBindCallApply": false, // 不对 bind/call/apply 进行严格类型检查
+        "forceConsistentCasingInFileNames": false, // 不强制文件名大小写一致性
+        "noFallthroughCasesInSwitch": false // 允许 switch 的 case 穿透
+    }
+}
