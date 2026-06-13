@@ -1,5 +1,5 @@
 {
-    "name": "@cato-monitor-platform/core",
+    "name": "@cato-monitor-platform/browser",
     "version": "1.0.0",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -13,6 +13,10 @@
     "author": "Cato",
     "license": "ISC",
     "description": "",
+    "dependencies": {
+        "@cato-monitor-platform/core": "workspace:*",
+        "@cato-monitor-platform/browser-utils": "workspace:*"
+    },
     "devDependencies": {
         "tsup": "8.5.1"
     }

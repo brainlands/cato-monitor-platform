@@ -1,25 +1,24 @@
-// 项目基础tsconfig配置
 {
     "compilerOptions": {
-        "alwaysStrict": false, // 是否在所有文件中启用严格模式('use strict')
-        "declaration": true, // 生成 .d.ts 类型声明  文件
-        "declarationMap": true, // 为 .d.ts 生成 sourceMap，便于IDE跳转到源码而非声明文件
-        "downlevelIteration": true, // 启用对迭代器(Symbol.iterator)在低版本目标中的完整支持
-        "importHelpers": true, // 从 tslib 导入辅助函数，减少每个文件的重复辅助代码
-        "inlineSources": true, // 将源码内联到 sourceMap 中，便于调试时查看原始代码
-        "isolatedModules": true, // 确保每个文件可独立转译，兼容 esbuild/swc 等单文件编译器
-        "lib": ["ESNext"], // 指定编译时可用的类型库
-        "moduleResolution": "node", // 模块解析策略，使用 Node.js 的解析算法
-        "noErrorTruncation": true, // 不截断错误信息，显示完整的类型错误
-        "noFallthroughCasesInSwitch": true, // 禁止 switch 的 case 穿透(缺少 break/return)
-        "noImplicitReturns": true, // 函数所有代码路径必须显式返回值
-        "noUnusedLocals": false, // 不检查未使用的局部变量
-        "noUnusedParameters": false, // 不检查未使用的函数参数
-        "preserveWatchOutput": true, // watch 模式下保留旧输出不清屏
-        "sourceMap": true, // 生成 .js.map sourceMap 文件
-        "strict": true, // 启用所有严格类型检查选项
-        "strictBindCallApply": false, // 不对 bind/call/apply 进行严格类型检查
-        "target": "es2018", // 编译输出的 JS 语法目标版本
-        "noUncheckedIndexedAccess": true // 对索引签名访问返回 T | undefined，防止越界访问
+        "alwaysStrict": false,
+        "declaration": true,
+        "declarationMap": true,
+        "downlevelIteration": true,
+        "importHelpers": true,
+        "inlineSources": true,
+        "isolatedModules": true,
+        "lib": ["ESNext"],
+        "moduleResolution": "node",
+        "noErrorTruncation": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "preserveWatchOutput": true,
+        "sourceMap": true,
+        "strict": true,
+        "strictBindCallApply": false,
+        "target": "es2018",
+        "noUncheckedIndexedAccess": true
     }
 }

@@ -1,0 +1,7 @@
+{
+    "extends": "../../tsconfig.json",
+    "include": ["src/**/*", "tsup.config.ts", "tsconfig.json", "src/index.tsx"],
+    "compilerOptions": {
+        "lib": ["DOM", "DOM.Iterable"]
+    }
+}
