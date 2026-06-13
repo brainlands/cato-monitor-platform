@@ -5,7 +5,11 @@ import heroImg from './assets/hero.png'
 import { setupCounter } from './counter.ts'
 import { init } from '@cato-monitor-platform/browser'
 
-init()
+init({
+  dsn: 'https://1234567890abcdef1234567890abcdef@app.sentry.io/123456',
+  integrations: [],
+})
+myfunctionundefined()
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">

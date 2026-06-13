@@ -1,26 +1,16 @@
-import { init as buInit } from '@cato-monitor-platform/browser-utils'
+import { Metrics } from '@cato-monitor-platform/browser-utils'
 import { Errors } from './integrations/errorsIntegration'
+import { BrowserTransport } from './transport'
+import {Monitor, type Integration, type MonitoringOptions} from '@cato-monitor-platform/core'
 
-const errors = new Errors()
 
-export function init() {
-    buInit()
-    errors.init()
 
-    // // 错误监控指标采集
-    // window.addEventListener('error', event => {
-    //     console.log('error', event)
-    // })
+export function init(options: MonitoringOptions) {
+    const monitoring = new Monitor(options)
+    const transport = new BrowserTransport(options.dsn)
+    monitoring.init(transport)
 
-    // // 对于异步数据指标采集
-    // window.addEventListener('unhandledrejection', event => {
-    //     console.log('unhandledrejection', event)
-    // })
-
-    // // 对于性能采集
-    // new PerformanceObserver(list => {
-    //     for (const entry of list.getEntries()) {
-    //         console.log(entry)
-    //     }
-    // }).observe({ entryTypes: ['resource', 'longtask'] })
+    new Errors(transport).init()
+    new Metrics(transport).init()
+    return monitoring
 }
